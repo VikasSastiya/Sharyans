@@ -1,17 +1,28 @@
 import React from 'react';
 
 function Card() {
+
+    const data = [
+        {image:'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', name: "Amazon Basics",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nesciunt laboriosam delectus!"},
+        {image:'https://images.unsplash.com/photo-1609353898029-d5408b6a93ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8',name:"Daily Objects",description:"Lorem ipsum dolor sit amet consesciunt laboriosam delectus!"},
+        {image:'https://images.unsplash.com/photo-1534802046520-4f27db7f3ae5?q=80&w=1858&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',name:"Apple",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nesiosam delectus!"}
+    ]
     return (
-        <div className='w-full h-screen bg-zinc-200'>
-       <div className='w-52 bg-zinc-100 absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%] rounded-md overflow-hidden'>
-         <div className='w-full h-32 bg-zinc-300'>
-            <img className='w-full h-full object-cover' src="https://images.unsplash.com/photo-1633174524778-61a18ee54490?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="" />
+        <div className='w-full h-screen flex items-center justify-center bg-zinc-200 gap-10'>
+         {data.map((elem,index)=> (
+           <div key={index} className='w-52 bg-zinc-100 rounded-md overflow-hidden'>
+           <div className='w-full h-32 bg-zinc-300'>
+              <img className='w-full h-full object-cover' src={elem.image} alt="" />
+           </div>
+                <div className='w-full px-3 py-4'>
+                    <h2 className='font-semibold'>{elem.name}</h2>
+                    <p className='text-xs mt-3'>{elem.description}</p>
+                </div>
+            
+           
+        
          </div>
-              <div className='w-full px-3 py-4'>
-                  <h2 className='font-semibold'>Amazon Basics.</h2>
-                  <p className='text-xs mt-3'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni ea rem totam.</p>
-              </div>
-       </div>
+         ))}
        </div>
     )
 }
