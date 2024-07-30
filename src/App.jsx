@@ -6,7 +6,8 @@ function App() {
   <div className='p-4'>
     <h1>name: {val.name}</h1>
     <h2>banned : {val.isBanned.toString()}</h2>
-    <button onClick={()=>setVal({...val,isBanned:!val.isBanned})} className='px-3 py-1 bg-blue-500 rounded-full text-white'>change</button>
+    <button onClick={()=>setVal({...val,isBanned:!val.isBanned})} className={`px-3 py-1 ${val.isBanned ? "bg-red-500" : "bg-blue-500"} rounded-full text-white`}>change</button>
+    
   </div>
 )
 }
