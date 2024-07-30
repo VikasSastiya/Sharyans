@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import Card from "./Components/Card";
 function App() {
-  const ans2 = useState({name:"harsh"});
+  const [banned,setBanned]= useState(false);
   // ans[0]=value
   // ans[1]=function
-    console.log(ans2[0]);
-  return (
+    return (
   //   <>
   //     <Card/>
   //     <h1>hey</h1>
   //  </>
-    <div>App</div>
+  <div className='p-4'>
+ <h1>{banned.toString()}</h1>
+ <button onClick={()=>setBanned(!banned)} className='px-2 py-1 mt-2 rounded-full text-xs bg-blue-500 text-white'>change karo</button>
+ </div>
 )
 }
 
-export default App;
+export default App; 
