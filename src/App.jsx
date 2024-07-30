@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Components/Card";
 function App() {
-  const [banned,setBanned]= useState(false);
+  const [val,setVal]= useState(12);
   // ans[0]=value
   // ans[1]=function
     return (
@@ -10,9 +10,9 @@ function App() {
   //     <h1>hey</h1>
   //  </>
   <div className='p-4'>
- <h1>{banned.toString()}</h1>
- <button onClick={()=>setBanned(!banned)} className='px-2 py-1 mt-2 rounded-full text-xs bg-blue-500 text-white'>change karo</button>
- </div>
+ <h1>{val}</h1>
+ <button onClick={()=>setVal(prev=>prev+1)} className='px-3 py-1 bg-blue-400 rounded-full'>change karo</button>
+     </div>
 )
 }
 
